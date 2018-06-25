@@ -7,3 +7,7 @@ C:\Users\User\Documents\CursWork\kursovaya\kursovaya\obj\Debug\kursovaya.csproj.
 C:\Users\User\Documents\CursWork\kursovaya\kursovaya\obj\Debug\kursovaya.csproj.CoreCompileInputs.cache
 C:\Users\User\Documents\CursWork\kursovaya\kursovaya\obj\Debug\kursovaya.exe
 C:\Users\User\Documents\CursWork\kursovaya\kursovaya\obj\Debug\kursovaya.pdb
+C:\Users\User\Documents\CursWork\kursovaya\kursovaya\obj\Debug\kursovaya.Comparers.resources
+C:\Users\User\Documents\CursWork\kursovaya\kursovaya\bin\Debug\TimSort.dll
+C:\Users\User\Documents\CursWork\kursovaya\kursovaya\bin\Debug\TimSort.pdb
+C:\Users\User\Documents\CursWork\kursovaya\kursovaya\bin\Debug\TimSort.xml

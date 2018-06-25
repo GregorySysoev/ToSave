@@ -4,17 +4,31 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "kursovaya", "kursovaya\kursovaya.csproj", "{C9B70784-1EB9-485C-949D-1ACAF007C0D0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{AE2CA992-0C52-4978-9BFE-4E75B95395A1} = {AE2CA992-0C52-4978-9BFE-4E75B95395A1}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TimSort", "..\..\..\Desktop\ts\sourceCode\timsort4net\source\TimSort\TimSort.csproj", "{AE2CA992-0C52-4978-9BFE-4E75B95395A1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
+		Unsafe|Any CPU = Unsafe|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{C9B70784-1EB9-485C-949D-1ACAF007C0D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C9B70784-1EB9-485C-949D-1ACAF007C0D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C9B70784-1EB9-485C-949D-1ACAF007C0D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C9B70784-1EB9-485C-949D-1ACAF007C0D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C9B70784-1EB9-485C-949D-1ACAF007C0D0}.Unsafe|Any CPU.ActiveCfg = Release|Any CPU
+		{C9B70784-1EB9-485C-949D-1ACAF007C0D0}.Unsafe|Any CPU.Build.0 = Release|Any CPU
+		{AE2CA992-0C52-4978-9BFE-4E75B95395A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE2CA992-0C52-4978-9BFE-4E75B95395A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE2CA992-0C52-4978-9BFE-4E75B95395A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE2CA992-0C52-4978-9BFE-4E75B95395A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE2CA992-0C52-4978-9BFE-4E75B95395A1}.Unsafe|Any CPU.ActiveCfg = Unsafe|Any CPU
+		{AE2CA992-0C52-4978-9BFE-4E75B95395A1}.Unsafe|Any CPU.Build.0 = Unsafe|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

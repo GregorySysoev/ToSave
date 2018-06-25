@@ -36,6 +36,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +45,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ExperementForm.cs" />
+    <Compile Include="ExperementForm.Designer.cs">
+      <DependentUpon>ExperementForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SortForm.cs">
@@ -57,9 +62,18 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="ExperementForm.resx">
+      <DependentUpon>ExperementForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="SortForm.resx">
       <DependentUpon>SortForm.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\Desktop\ts\sourceCode\timsort4net\source\TimSort\TimSort.csproj">
+      <Project>{ae2ca992-0c52-4978-9bfe-4e75b95395a1}</Project>
+      <Name>TimSort</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
