@@ -741,27 +741,13 @@ namespace kursovaya
 
                     using (StreamWriter sw = new StreamWriter(p3))
                     {
+                        int step = count * 2 + 1;
                         for (int i = 0, j = 0; i < count - 1; i++, j++)
                         {
-                            mran = GetMinrun(count);
-                            if (j != mran)
-                            {
-                                temp = rand3.Next(2 * i);
-                                if (prev3 > temp) {
-                                    if (0 == prev3) temp = 0;
-                                    else temp = prev3 - 1;
-                                }
-                                sw.WriteLine(temp);
-                                prev = temp;
-                            }
-                            else
-                            {
-                                j = 0;
-                                temp = rand3.Next(count);
-                                sw.WriteLine(temp);
-                            }
+                            step -= rand3.Next(2) - 1;
+                            sw.WriteLine(step);
                         }
-                        sw.Write(rand3.Next());
+                        sw.Write(step);
                         sw.Close();
                     }
                     break;
