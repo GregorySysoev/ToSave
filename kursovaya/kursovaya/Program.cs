@@ -645,12 +645,12 @@ namespace kursovaya
             switch (status)
             {
                 case 1:
-                    string path = @"C:\Users\User\Documents\CursWork\sequencys\Best";
-                    string p = path;
+                    string path = @"C:\Users\User\Documents\CursWork\sequencys\";
+                    string p = path + count + "up" + ".txt";
                     int copy = 1;
                     while (File.Exists(p))
                     {
-                        p = path + copy.ToString() + ".txt";
+                        p = path + count + "up" + copy.ToString() + ".txt";
                         copy++;
                     }
 
@@ -658,61 +658,61 @@ namespace kursovaya
                     int temp = rand.Next(100);
                     int prev = 0;
 
-                    int mran = GetMinrun(count);
-
                     using (StreamWriter sw = new StreamWriter(p))
                     {
+                        int previus = 0;
+                        int tempran = count * 3 + 1; ;
+
+                        
                         for (int i = 0, j = 0; i < count - 1; i++, j++)
                         {
-                            if (j != mran)
-                            {
-                                temp = rand.Next(2 * i);
-                                if (prev > temp) temp = prev + 1;
-                                sw.WriteLine(temp);
-                                prev = temp;
-                            }
-                            else
-                            {
-                                j = 0;
-                                temp = rand.Next(count);
-                                sw.WriteLine(temp);
-                            }
+                            tempran += (rand.Next(2) + 1);
+                            sw.WriteLine(tempran);
                         }
-                        sw.Write(rand.Next());
+                        sw.Write(tempran + 1);
                         sw.Close();
                     }
                     break;
 
                 case 2:
                     rand = new Random();
-                    string path1 = @"C:\Users\User\Documents\CursWork\sequencys\Average";
-                    string p1 = path1;
+                    string path1 = @"C:\Users\User\Documents\CursWork\sequencys\";
+                    string p1 = path1 + count + "rep" + ".txt";
                     int copy1 = 1;
                     while (File.Exists(p1))
                     {
-                        p1 = path1 + copy1.ToString() + ".txt";
+                        p1 = path1 + count + "rep" + copy1.ToString() + ".txt";
                         copy1++;
                     }
                     using (StreamWriter sw = new StreamWriter(p1))
                     {
+                        int tmq = 0;
+                        int mirag = 1;
                         for (int i = 0; i < count - 1; i++)
-                        {
-                            temp = rand.Next(count);
-                            sw.WriteLine(temp);
+                        { 
+                            if (0 != count % mirag++)
+                            {
+                                tmq += rand.Next(4) + 1;
+                                sw.WriteLine(tmq);
+                            }
+                            else {
+                                sw.WriteLine(tmq);
+                                tmq = rand.Next(count);
+                            }
                         }
-                        sw.Write(rand.Next());
+                        sw.WriteLine(tmq);
                         sw.Close();
                     }
                     break;
 
                 case 3:
                     rand = new Random();
-                    string path2 = @"C:\Users\User\Documents\CursWork\sequencys\Worst";
-                    string p2 = path2;
+                    string path2 = @"C:\Users\User\Documents\CursWork\sequencys\";
+                    string p2 = path2 + count + "rand" + ".txt";
                     int copy2 = 1;
                     while (File.Exists(p2))
                     {
-                        p2 = path2 + copy2.ToString() + ".txt";
+                        p2 = path2 + count + "rand" + copy2.ToString() + ".txt";
                         copy2++;
                     }
                     using (StreamWriter sw = new StreamWriter(p2))
@@ -721,33 +721,32 @@ namespace kursovaya
                         {
                             sw.WriteLine(rand.Next(count));
                         }
-                        sw.Write(rand.Next(count));
+                        sw.WriteLine(rand.Next(count));
                         sw.Close();
                     }
                     break;
                 case 4:
                     Random rand3 = new Random();
-                    string path3 = @"C:\Users\User\Documents\CursWork\sequencys\Decreas";
-                    string p3 = path3;
+                    string path3 = @"C:\Users\User\Documents\CursWork\sequencys\";
+                    string p3 = path3 + count + "dec" + ".txt";
                     int copy3 = 1;
                     while (File.Exists(p3))
                     {
-                        p3 = path3 + copy3.ToString() + ".txt";
+                        p3 = path3 + count + "dec" + copy3.ToString() + ".txt";
                         copy3++;
                     }
 
                     int temp3 = rand3.Next(100);
-                    int prev3 = 0;
 
                     using (StreamWriter sw = new StreamWriter(p3))
                     {
-                        int step = count * 2 + 1;
+                        int step = count * 3 + 1;
                         for (int i = 0, j = 0; i < count - 1; i++, j++)
                         {
-                            step -= rand3.Next(2) - 1;
+                            step -= (rand3.Next(2) + 1);
                             sw.WriteLine(step);
                         }
-                        sw.Write(step);
+                        sw.Write(12);
                         sw.Close();
                     }
                     break;
@@ -788,7 +787,6 @@ namespace kursovaya
 
             while ((left <= middle) && (right <= high))
             {
-                terzia.compares++;
                 if (input[left] < input[right])
                 {
                     terzia.compares++;
@@ -808,7 +806,6 @@ namespace kursovaya
 
             if (left <= middle)
             {
-                terzia.compares++;
                 while (left <= middle)
                 {
                     terzia.compares++;
@@ -821,7 +818,6 @@ namespace kursovaya
 
             if (right <= high)
             {
-                terzia.compares++;
                 while (right <= high)
                 {
                     terzia.compares++;

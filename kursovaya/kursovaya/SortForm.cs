@@ -117,5 +117,10 @@ namespace kursovaya
             radioButton3_WasClicked = false;
             radioButton4_WasClicked = true;
         }
+
+        private void SortForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

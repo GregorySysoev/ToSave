@@ -64,6 +64,7 @@ namespace kursovaya
             InitializeComponent();
             foreach (String file in openFileDialog1.FileNames)
             {
+            this.tabPage4.Text = "Пересылки";
                 Terzia TimTerz = new Terzia(0, 0, 0);
                 Terzia MergTerz = new Terzia(0, 0, 0);
 
@@ -83,28 +84,28 @@ namespace kursovaya
                     string f1 = fileName + "TimSort";
                     string f2 = fileName + "MergeSort";
 
+                    Random rnd = new Random();
                     chart3.Series.Add(f2);
-                    chart3.Series[f2].Points.AddXY(countFiles, MergTerz.compares);
+                    chart3.Series[f2].Points.AddXY(countFiles, MergTerz.changes);
                     chart2.Series.Add(f2);
-                    chart2.Series[f2].Points.AddXY(countFiles, MergTerz.changes);
+                    chart2.Series[f2].Points.AddXY(countFiles, MergTerz.compares);
                     chart1.Series.Add(f2);
                     chart1.Series[f2].Points.AddXY(countFiles, MergTerz.time);
 
-                    chart3.Series[f2].Color = Color.LightBlue;
-                    chart2.Series[f2].Color = Color.LightBlue;
-                    chart1.Series[f2].Color = Color.LightBlue;
+                    chart3.Series[f2].Color = Color.FromArgb(rnd.Next(256), 0, rnd.Next(256));
+                    chart2.Series[f2].Color = Color.FromArgb(rnd.Next(256), 0, rnd.Next(256));
+                    chart1.Series[f2].Color = Color.FromArgb(rnd.Next(256), 0, rnd.Next(256));
 
                     chart3.Series.Add(f1);
-                    chart3.Series[f1].Points.AddXY(countFiles, TimTerz.compares);
+                    chart3.Series[f1].Points.AddXY(countFiles, TimTerz.changes);
                     chart2.Series.Add(f1);
-                    chart2.Series[f1].Points.AddXY(countFiles, TimTerz.changes);
+                    chart2.Series[f1].Points.AddXY(countFiles, TimTerz.compares);
                     chart1.Series.Add(f1);
                     chart1.Series[f1].Points.AddXY(countFiles, TimTerz.time);
 
-                    chart3.Series[f1].Color = Color.Blue;
-                    chart2.Series[f1].Color = Color.Blue;
-                    chart1.Series[f1].Color = Color.Blue;
-
+                    chart3.Series[f1].Color = Color.FromArgb(rnd.Next(256), rnd.Next(256), 0);
+                    chart2.Series[f1].Color = Color.FromArgb(rnd.Next(256), rnd.Next(256), 0);
+                    chart1.Series[f1].Color = Color.FromArgb(rnd.Next(256), rnd.Next(256), 0);
                     sr.Close();
                 }
             }

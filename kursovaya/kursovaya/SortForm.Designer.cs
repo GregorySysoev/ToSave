@@ -177,7 +177,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Name = "SortForm";
-            this.Text = "Исследование сортировки Timsort";
+            this.Text = "Исследование сортировок слиянием и Timsort";
+            this.Load += new System.EventHandler(this.SortForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
