@@ -632,16 +632,7 @@ namespace kursovaya
     {
         public void CreateFile(byte status, int count)
         {
-            int GetMinrun(int n)
-            {
-                int r = 0;           /* станет 1 если среди сдвинутых битов будет хотя бы 1 ненулевой */
-                while (n >= 64)
-                {
-                    r |= n & 1;
-                    n >>= 1;
-                }
-                return n + r;
-            }
+           
             switch (status)
             {
                 case 1:
@@ -696,6 +687,7 @@ namespace kursovaya
                                 sw.WriteLine(tmq);
                             }
                             else {
+                                mirag = rand.Next(count);
                                 sw.WriteLine(tmq);
                                 tmq = rand.Next(count);
                             }
@@ -775,6 +767,7 @@ namespace kursovaya
             MergeSort(input, 0, input.Length - 1, ref terzia);
             sw.Stop();
             terzia.time = sw.Elapsed.Milliseconds;
+            sw.Reset();
         }
 
         private static void Merge(int[] input, int low, int middle, int high, ref Terzia terzia)
